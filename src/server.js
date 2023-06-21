@@ -3,10 +3,11 @@ import { join } from 'path';
 import configViewEngine from './config/ViewEngine';
 import req from 'express/lib/request';
 import res from 'express/lib/response';
+require('dotenv').config()
 
 
 const app = express();
-const port = 6868
+const port = process.env.PORT || 8080;
 
 configViewEngine(app);
 
