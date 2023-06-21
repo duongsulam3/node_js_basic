@@ -4,16 +4,15 @@ import configViewEngine from './config/ViewEngine';
 import req from 'express/lib/request';
 import res from 'express/lib/response';
 require('dotenv').config()
+import initWebRoute from './routes/web';
 
 
 const app = express();
 const port = process.env.PORT || 8080;
 
 configViewEngine(app);
+initWebRoute(app);
 
-app.get('/', (req, res) => {
-    res.render("test/index.ejs");
-})
 
 // app.get('/', (req, res) => {
 //     res.sendFile(join(__dirname, '/index.html'));
