@@ -1,10 +1,16 @@
 import express from 'express';
 import { join } from 'path';
-import configViewEngine from './config/ViewEngine';
 import req from 'express/lib/request';
 import res from 'express/lib/response';
 require('dotenv').config()
+
+
+
+
+import configViewEngine from './config/ViewEngine';
 import initWebRoute from './routes/web';
+import connection from './config/connectDB';
+
 
 
 const app = express();
