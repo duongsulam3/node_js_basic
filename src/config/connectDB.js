@@ -1,12 +1,14 @@
 // get the client
 //const mysql = require('mysql2');
+//import mysql from "mysql2";
 import mysql from "mysql2";
 
 // create the connection to database
+
 const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  database: 'nodejsbasic'
+  host: "localhost",
+  user: "root",
+  database: "nodejsbasic",
 });
 
 // simple query
@@ -17,7 +19,5 @@ const connection = mysql.createConnection({
 //     //console.log(fields); // fields contains extra meta data about results, if available
 //   }
 // );
-
-
 
 export default connection;
