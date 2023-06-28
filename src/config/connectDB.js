@@ -1,10 +1,10 @@
 // get the client
-//const mysql = require('mysql2');
 //import mysql from "mysql2";
-import mysql from "mysql2";
+import mysql from "mysql2/promise";
 
 // create the connection to database
 
+console.log("Executing database...................");
 const connection = mysql.createConnection({
   host: "localhost",
   user: "root",
