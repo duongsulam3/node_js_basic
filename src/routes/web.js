@@ -10,6 +10,8 @@ const initWebRoute = (app) => {
   router.get("/about", homeController.getAboutMe);
   //Detail User
   router.get("/detail/user/:id", homeController.getDetailUser)
+  //Create New User
+  router.post("/createNewUser", homeController.createNewUser)
 
   return app.use("/api/test", router);
 };

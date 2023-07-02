@@ -22,6 +22,7 @@
                 <th>ID</th>
                 <th>First Name</th>
                 <th>Last Name</th>
+                <th>Address</th>
                 <th>Action</th>
             </tr>
           </thead>
@@ -32,6 +33,7 @@
                     <td><%= dataUser[i].id %></td>
                     <td><%= dataUser[i].firstName %></td>
                     <td><%= dataUser[i].lastName %></td>
+                    <td><%= dataUser[i].address %></td>
                     <td>
                         <button>
                            <a href="/api/test/detail/user/<%= dataUser[i].id %> ">Detail</a>
@@ -47,6 +49,39 @@
             <% } %>
           </tbody>
         </table>
+        
+        </div>
+        <div class="createUserscontainer">
+            <form action="/api/test/createNewUser", method="post">
+              <div>
+                <b>Create New User</b>
+              </div>
+              <div>
+                <label>
+                  First Name
+                </label>
+                <input type="text" name="firstName"/>
+              </div>
+              <div>
+                <label>
+                  Last Name
+                </label>
+                <input type="text" name="lastName"/>
+              </div>
+              <div>
+                <label>
+                  Email
+                </label>
+                <input type="email" name="email"/>
+              </div>
+              <div>
+                <label>
+                  Address
+                </label>
+                <input type="text" name="address"/>
+              </div>
+                <button type="submit" class="btnsubmit1">Submit</button>
+            </form>
       </div>
 </body>
 </html>

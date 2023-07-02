@@ -1,3 +1,4 @@
+import res from "express/lib/response";
 import connection from "../config/connectDB";
 
 let getHomepage = async (req, res) => {
@@ -20,8 +21,20 @@ let getDetailUser = async (req, res) => {
   return res.send(JSON.stringify(users[0]));
 };
 
+let createNewUser = async (req, res) => {
+  console.log(req.body);
+  let { firstName, lastName, email, address } = req.body;
+  await (
+    await connection
+  ).execute(
+    "INSERT INTO `users`(firstName, lastName, email, address) value (?, ?, ?, ?)",
+    [firstName, lastName, email, address]
+  );
+  return res.redirect("/api/test/");
+};
 export default {
   getHomepage,
   getAboutMe,
   getDetailUser,
+  createNewUser,
 };
