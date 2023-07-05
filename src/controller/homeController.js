@@ -17,7 +17,7 @@ let getDetailUser = async (req, res) => {
     await connection
   ).execute("SELECT * FROM `users` WHERE id = ?", [userID]);
   //console.log(users);
-  return res.send(JSON.stringify(users));
+  return res.send(JSON.stringify(users[0]));
 };
 
 let createNewUser = async (req, res) => {
@@ -29,7 +29,7 @@ let createNewUser = async (req, res) => {
     "INSERT INTO `users`(firstName, lastName, email, address) value (?, ?, ?, ?)",
     [firstName, lastName, email, address]
   );
-  return res.redirect("/api/test");
+  return res.redirect("/");
 };
 
 let deleteUser = async (req, res) => {
@@ -37,7 +37,7 @@ let deleteUser = async (req, res) => {
   await (
     await connection
   ).execute("DELETE FROM `users` WHERE id = ?", [userID]);
-  return res.redirect("/api/test");
+  return res.redirect("/");
 };
 
 let editUser = async (req, res) => {
@@ -60,7 +60,7 @@ let updateUser = async (req, res) => {
     "UPDATE `users` SET  firstName = ? , lastName = ? , email = ? , address = ? WHERE id = ? ",
     [firstName, lastName, email, address, userID]
   );
-  return res.redirect("/api/test");
+  return res.redirect("/");
 };
 
 export default {

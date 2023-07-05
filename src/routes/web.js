@@ -19,7 +19,7 @@ const initWebRoute = (app) => {
   //Update User
   router.post("/updateUser", homeController.updateUser)
 
-  return app.use("/api/test", router);
+  return app.use("/", router);
 };
 
 export default initWebRoute;

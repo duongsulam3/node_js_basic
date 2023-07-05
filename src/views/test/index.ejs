@@ -35,17 +35,17 @@
                     <td><%= dataUser[i].lastName %></td>
                     <td><%= dataUser[i].address %></td>
                     <td class="abc">
-                        <form action="/api/test/detailUser/<%= dataUser[i].id %>", method="get">
+                        <form action="/detailUser/<%= dataUser[i].id %>", method="get">
                           <button>
                            Detail
                           </button>
                         </form>
-                        <form action="/api/test/editUser/<%= dataUser[i].id %>", method="get">
+                        <form action="/editUser/<%= dataUser[i].id %>", method="get">
                           <button>
                             Edit
                           </button>
                         </form>
-                        <form action="/api/test/deleteUser" method="post">
+                        <form action="/deleteUser" method="post">
                           <button type="submit" value="<%= dataUser[i].id %>" name="userID">
                             Delete
                           </button>
@@ -58,7 +58,7 @@
         
         </div>
         <div class="createUserscontainer">
-            <form action="/api/test/createNewUser", method="post">
+            <form action="/createNewUser", method="post">
               <div>
                 <b>Create New User</b>
               </div>
