@@ -40,3 +40,29 @@ body {
   margin-top: 15px;
   cursor: pointer; 
 }
+
+.btnDetail .aTagDetail {
+  text-decoration: none;
+}
+
+.abc {
+  display: flex !important;
+}
+
+.abc form {
+  padding-inline-end: 5px;
+}
+
+.editUserscontainer {
+  text-align: center;
+  padding: 5;
+}
+
+.editUserscontainer form div label{
+  display: block;
+  padding-top: 10;
+}
+
+.editUserscontainer form button {
+  margin-top: 15;
+}

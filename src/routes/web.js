@@ -9,9 +9,15 @@ const initWebRoute = (app) => {
   //Trang About Me
   router.get("/about", homeController.getAboutMe);
   //Detail User
-  router.get("/detail/user/:id", homeController.getDetailUser)
+  router.get("/detailUser/:id", homeController.getDetailUser);
   //Create New User
-  router.post("/createNewUser", homeController.createNewUser)
+  router.post("/createNewUser", homeController.createNewUser);
+  //Delete User
+  router.post("/deleteUser", homeController.deleteUser);
+  //Edit User
+  router.get("/editUser/:id", homeController.editUser);
+  //Update User
+  router.post("/updateUser", homeController.updateUser)
 
   return app.use("/api/test", router);
 };

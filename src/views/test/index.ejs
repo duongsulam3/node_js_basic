@@ -34,16 +34,22 @@
                     <td><%= dataUser[i].firstName %></td>
                     <td><%= dataUser[i].lastName %></td>
                     <td><%= dataUser[i].address %></td>
-                    <td>
-                        <button>
-                           <a href="/api/test/detail/user/<%= dataUser[i].id %> ">Detail</a>
-                        </button>
-                        <button>
+                    <td class="abc">
+                        <form action="/api/test/detailUser/<%= dataUser[i].id %>", method="get">
+                          <button>
+                           Detail
+                          </button>
+                        </form>
+                        <form action="/api/test/editUser/<%= dataUser[i].id %>", method="get">
+                          <button>
                             Edit
-                        </button>
-                        <button>
+                          </button>
+                        </form>
+                        <form action="/api/test/deleteUser" method="post">
+                          <button type="submit" value="<%= dataUser[i].id %>" name="userID">
                             Delete
-                        </button>
+                          </button>
+                        </form>
                     </td>
                 </tr>
             <% } %>
