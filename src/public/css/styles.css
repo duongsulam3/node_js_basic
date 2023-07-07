@@ -66,3 +66,11 @@ body {
 .editUserscontainer form button {
   margin-top: 15;
 }
+
+.input-uploadFile {
+  cursor: pointer; 
+}
+
+.btn-upload {
+  display: block;
+}

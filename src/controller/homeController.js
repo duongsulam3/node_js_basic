@@ -1,3 +1,4 @@
+import res from "express/lib/response";
 import connection from "../config/connectDB";
 
 let getHomepage = async (req, res) => {
@@ -63,6 +64,14 @@ let updateUser = async (req, res) => {
   return res.redirect("/");
 };
 
+let uploadFIle = (req, res) => {
+  res.render("test/uploadFile.ejs");
+};
+
+let uploadSingleFile = async (req, res) => {
+  res.send("Hello world");
+};
+
 export default {
   getHomepage,
   getAboutMe,
@@ -71,4 +80,6 @@ export default {
   deleteUser,
   editUser,
   updateUser,
+  uploadFIle,
+  uploadSingleFile,
 };

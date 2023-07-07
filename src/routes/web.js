@@ -17,7 +17,10 @@ const initWebRoute = (app) => {
   //Edit User
   router.get("/editUser/:id", homeController.editUser);
   //Update User
-  router.post("/updateUser", homeController.updateUser)
+  router.post("/updateUser", homeController.updateUser);
+
+  router.get("/upload-file", homeController.uploadFIle)
+  router.post("/upload-singlefile", homeController.uploadSingleFile)
 
   return app.use("/", router);
 };

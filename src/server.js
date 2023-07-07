@@ -7,6 +7,7 @@ require("dotenv").config();
 import configViewEngine from "./config/ViewEngine";
 import initWebRoute from "./routes/web";
 import connection from "./config/connectDB";
+import initApiRoute from "./routes/api";
 
 const app = express();
 const port = process.env.PORT || 8080;
@@ -17,7 +18,11 @@ app.use(express.json());
 
 configViewEngine(app);
 
+//
 initWebRoute(app);
+
+//API
+initApiRoute(app)
 
 // app.get('/', (req, res) => {
 //     res.sendFile(join(__dirname, '/index.html'));
