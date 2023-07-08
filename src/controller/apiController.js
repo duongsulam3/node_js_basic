@@ -2,12 +2,10 @@ import connection from "../config/connectDB";
 
 let getAllUser = async (req, res) => {
   const [rows] = await (await connection).execute("SELECT * FROM `users`");
-  let [totalSize] = await (
-    await connection
-  ).query("SELECT COUNT(*) FROM `users`");
+  const totalSize = rows.length;
   (await connection).end;
   return res.status(200).json({
-    total_size: totalSize[0],
+    total_size: totalSize,
     users: rows,
   });
 };
@@ -27,6 +25,7 @@ let createNewUser = async (req, res) => {
     "INSERT INTO `users`(firstName, lastName, email, address) value (?, ?, ?, ?)",
     [firstName, lastName, email, address]
   );
+  (await connection).end;
   return res.status(200).json({
     message: "OK",
   });
